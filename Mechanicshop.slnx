@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Mechanicshop.Api/Mechanicshop.Api.csproj" />
+    <Project Path="src/Mechanicshop.Application/Mechanicshop.Application.csproj" />
+    <Project Path="src/Mechanicshop.Client/Mechanicshop.Client.csproj" />
+    <Project Path="src/Mechanicshop.Contracts/Mechanicshop.Contracts.csproj" />
+    <Project Path="src/Mechanicshop.Domain/Mechanicshop.Domain.csproj" />
+    <Project Path="src/Mechanicshop.Infrastructure/Mechanicshop.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MechanicShop.Api.IntegrationTests/MechanicShop.Api.IntegrationTests.csproj" />
+    <Project Path="tests/MechanicShop.Application.SubcutaneousTests/MechanicShop.Application.SubcutaneousTests.csproj" />
+    <Project Path="tests/MechanicShop.Application.UnitTests/MechanicShop.Application.UnitTests.csproj" />
+    <Project Path="tests/MechanicShop.Domain.UnitTests/MechanicShop.Domain.UnitTests.csproj" />
+    <Project Path="tests/MechanicShop.Tests.Common/MechanicShop.Tests.Common.csproj" />
+  </Folder>
+</Solution>

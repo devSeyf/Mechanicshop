@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>false</IsTestProject>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NSubstitute" />
+    <PackageReference Include="xunit.v3" />
+  </ItemGroup>
+
+  
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Mechanicshop.Domain\Mechanicshop.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Mechanicshop.Application\Mechanicshop.Application.csproj" />
+    <ProjectReference Include="..\..\src\Mechanicshop.Infrastructure\Mechanicshop.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
