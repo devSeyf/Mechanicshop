@@ -1,3 +1,5 @@
+
+```markdown
 # MechanicShop — Automotive Service Management System
 
 ![.NET 10](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet)
@@ -78,3 +80,89 @@ The codebase strictly adheres to **Clean Architecture** principles, maintaining 
                                        ┌──────────▼─────────────┐
                                        │   Mechanicshop.Domain  │ (Entities & Domain Logic)
                                        └────────────────────────┘
+
+```
+
+### Feature-Based Application Slices
+
+Inside `Mechanicshop.Application`, logic is organized by feature rather than layer type:
+`Billing` • `Customers` • `Dashboard` • `Identity` • `Labors` • `RepairTasks` • `Scheduling` • `WorkOrders`
+
+---
+
+## 🧪 Automated Testing Strategy
+
+Testing is divided into four targeted projects to ensure reliability at every layer:
+
+* **`Domain.UnitTests`** — Tests pure domain logic, entity states, and business rules in complete isolation.
+* **`Application.UnitTests`** — Validates command and query handlers using mocked dependencies (**NSubstitute**).
+* **`Application.SubcutaneousTests`** — Exercises application pipelines directly through Dependency Injection without HTTP overhead.
+* **`Api.IntegrationTests`** — End-to-end HTTP tests running against disposable, real SQL Server instances via **Testcontainers**.
+
+Run the full test suite with:
+
+```bash
+dotnet test
+
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* [.NET 10 SDK](https://dotnet.microsoft.com/download)
+* [SQL Server](https://www.microsoft.com/sql-server/) (Local DB or Docker)
+* [Docker Desktop](https://www.docker.com/) *(Optional: required for running Seq and Prometheus)*
+
+### Quick Start (Local Run)
+
+1. **Clone the repository:**
+```bash
+git clone [https://github.com/AbdAlAleem-Hassan/Mechanicshop.git](https://github.com/AbdAlAleem-Hassan/Mechanicshop.git)
+cd Mechanicshop
+
+```
+
+
+2. **Restore and Run:**
+```bash
+dotnet restore
+dotnet run --project src/Mechanicshop.Api
+
+```
+
+
+> *Note: The API project hosts and serves the Blazor WebAssembly client directly.*
+
+
+3. **(Optional) Launch Observability Infrastructure:**
+```bash
+docker compose -f containers/seq/docker-compose.yml up -d
+docker compose -f containers/prometheus/docker-compose.yml up -d
+
+```
+
+
+
+---
+
+## 🔍 Exploring the API
+
+* **Interactive Documentation:** Once running, navigate to `/swagger` or `/scalar` in your browser to inspect and execute endpoints.
+* **HTTP Client Files:** A pre-configured `Requests/requests.http` file is included for instant endpoint testing directly within VS Code or JetBrains Rider.
+
+---
+
+## 👤 Author & Architecture Notes
+
+Designed and implemented end-to-end as a production-grade .NET solution. Key architectural highlights include:
+
+* Application of **CQRS** and **Clean Architecture** patterns tailored to complex scheduling and billing domains.
+* Dual-role UI implementation using **Blazor WebAssembly** with real-time **SignalR** synchronization.
+* Production-ready observability integration (structured logging, tracing, and metrics) alongside containerized integration testing.
+
+```
+
+```
